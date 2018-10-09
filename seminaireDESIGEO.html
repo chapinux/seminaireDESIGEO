@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Modélisation et Simulation: Séminaire Master DESIGEO</title>
+
+  <meta name="description" content="FOSS4Gfr 2018">
+  <meta name="author" content="paul" >
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="custom_css/openmole.css" id="theme">
+  <link rel="stylesheet" href="custom_css/theme.css" id="theme">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="js/reveal.js/lib/css/zenburn.css">
+
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+  if( window.location.search.match( /print-pdf/gi ) ) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'css/print/pdf.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+  </script>
+
+  <!--        remove default borders around images-->
+  <style>
+  .reveal section img {
+    background:none;
+    border:none;
+    box-shadow:none;
+  }
+
+  #logos {
+    width: 960px; // Change this according to the width you want.
+    height: 500px; // Change this as well
+    margin: 0 auto 0 auto;
+    text-align: center; // Will center the images contained in the div
+  }
+  .MathJax_Display {
+  text-align: left !important;
+  display: inline !important;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+
+
+      <section data-transition="fade-out">
+
+<h1>Modélisation et Simulation</h1>
+<h2>pour l'aide à la décision</h2>
+
+Séminaire DESIGEO
+<br> 22 Octobre 2018
+<br>
+<br>
+<small>Paul Chapron, IGN</small>
+<br>
+<small><img src="img/twitter.png", width= '20em', align="middle" ><a href="https://twitter.com/chapinux">@chapinux</a></small>
+</section>
+        
+
+
+
+
+<section data-transition="fade-out">
+
+<p align="left">  
+Modèle : exemples, définition(s), 
+<br><br>
+Simulation : exemples, définition
+<br><br>
+Modèles de simulation spatiale
+<br><br>
+Modèles de simulation pour l'aide à la décision
+<br><br>
+
+
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+<h2>Qu'est ce qu'un modèle ?</h2>
+</section>
+
+<section data-transition="fade-out">
+<h3>Selon google : <tt> model</tt></h3>
+    <img src="img/topmodel.jpeg",  style="float: left; width: 50% ; height:580px"> 
+    <img src="img/topmodelman.jpg", style="float: left; width: 50%">
+</section>
+
+<section data-transition="fade-out">
+<h3>Selon google :  model -woman -man -top -fashion</p>   </h3>
+    <img src="img/modelTesla.jpg", style="float: center; width: 50%">
+</section>
+
+
+<section data-transition="fade-out">
+<h3>Selon google :  model -woman -man -top -fashion -tesla</h3>
+    <img src="img/modelcar.jpg", style="float: left; width: 50%">
+    <img src="img/modelBusiness.png", style="float: left; width: 50%">
+</section>
+
+
+<section data-transition="fade-out">
+<h3>Bilan prématuré</h3>
+<br>
+Un modèle c'est :
+<br>
+<br>
+<ul>
+  <li>une représentation idéalisée <img src="img/topmodel.jpeg",  style="vertical-align:  middle; width:8%"><img src="img/topmodelman.jpg", style="vertical-align:  middle; width: 9%"></li>
+  <li>qui mime la réalité<img src="img/modelcar.jpg", style="vertical-align:  middle; width: 10%"></li>
+  <li>ou résume un processus, une activité<img src="img/modelBusiness.png", style="vertical-align:  middle; width: 10%"></li>
+</ul>
+
+</section>
+
+
+
+
+<section data-transition="fade-out">
+<h2>Qu'est ce qu'un modèle <b>en sciences</b> ?</h2>
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en biologie : 
+<br>
+    <img src="img/modelmouse.png", style="float: center; width: 100%">
+</section>
+
+<section data-transition="fade-out">
+Exemple en biologie : 
+<br>
+    <img src="img/modelDNA.jpg", style="float: center; height: 100%">
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en physique : 
+<br>
+<img src="img/modelSolarSystem.jpg", style="float: center; width: 70%">
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en physique : 
+<br>
+<img src="img/modelAtom1.jpg", style="float: center; width: 70%">
+</section>
+
+<section data-transition="fade-out">
+Exemple en physique : 
+<br>
+<img src="img/modelAtom2.jpg", style="float: center; width: 100%">
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en physique : 
+<br>
+<img src="img/modelAtom3.jpg", style="float: center; width: 80%">
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en physique : 
+<br>
+<img src="img/modelAtom4.png", style="float: center; height: 100%">
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en chimie : 
+<br>
+<img src="img/modelMolecule.jpg", style="float: center; height: 100%">
+</section>
+
+
+
+
+<section data-transition="fade-out">
+Exemple en statistiques : 
+<br>
+<br>
+<img src="img/modelLinear.png", style="float: left; width: 50%">
+<img src="img/modelGaussian.png", style="float: left; width: 50%">
+
+</section>
+
+<section data-transition="fade-out">
+Exemple en informatique :
+<br>
+<img src="img/modelOSI.png", style="float: center; height: 100%">
+</section>
+
+
+<section data-transition="fade-out">
+Exemple en informatique :
+<br>
+<img src="img/modelUML.png", style="float: left; width: 100%">
+</section>
+<section data-transition="fade-out">
+Exemple en informatique :
+<br>
+<img src="img/datamodel.png", style="float: left; width: 100%">
+</section>
+
+
+
+<section data-transition="fade-out">
+
+<h2>Et en géomatique ? </h2>
+
+</section>
+
+
+<section data-transition="fade-out">
+Quels sont les points communs ? 
+   <style>
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+     </style>
+
+<div class="row">
+  <div class="column">
+    <img src="img/topmodelman.jpg", style="float: left;  height: 5em">
+     </div><div class="column">
+     <img src="img/modelSolarSystem.jpg", style="float: left; width: 100%">
+     </div><div class="column">
+    <img src="img/modelcar.jpg", style="float: left; width: 100%">
+     </div><div class="column">
+    <img src="img/modelBusiness.png", style="float: left; width: 100%">
+     </div>
+   </div>
+<div class="row">
+    <div class="column">
+    <img src="img/modelmouse.png", style="float: left; width: 100%">
+    </div><div class="column">
+    <img src="img/modelDNA.jpg", style="float: left; width: 100% ; height: 5em">
+    </div><div class="column">
+    <img src="img/modelAtom1.jpg", style="float: left; width: 100%">
+    </div><div class="column">
+      <img src="img/modelAtom3.jpg", style="float: left; width: 100%">
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+      <img src="img/modelUML.png", style="float: left; width: 100%">
+     </div><div class="column">
+      <img src="img/modelAtom4.png", style="float: left; width: 100%">
+     </div><div class="column">
+      <img src="img/modelMolecule.jpg", style="float: left; width: 100%">
+     </div><div class="column">
+      <img src="img/modelLinear.png", style="float: left; width: 100%">
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section data-transition="fade-out">
+<h2>Caractéristiques communes</h2>
+<br>
+<p align="left">
+un modèle est une <b><i>représentation</i></b>
+<ul>
+  <li> <b>idéalisée, stylisée</b> </li>
+  <li> <b>simplifiée, régulière</b> </li>
+  <li> <b>opératoire, utile</b> </li>
+</ul>
+<div align="left"> mais aussi</div>
+<ul>
+    <li> <b>tronquée, locale</b> </li>
+    <li> <b>grossière, <u>fausse</u> </b> </li>
+</ul>
+<br>
+<p align="left">
+
+d'un objet, d'un phénomène <u>concret</u>. 
+<br><br>
+<small>Un modèle n'est pas pour autant simple ou facile à manipuler !</small>
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+<h3>Plusieurs types de modèles</h3>
+
+Catégories non exclusives :
+<br><br>
+
+<ul>
+  <li>concret / théorique</li>
+  <li>statique / dynamique</li>
+  <li>détaillé / simpliste</li>
+  <li>général / particulier</li>
+  <li>descriptif / explicatif / génératif </li>
+  
+</ul>
+<br><br>
+<p align="left">
+Souvent, un modèle possède une <b>portée</b> , une <b>échelle</b>, s'appuie sur une <b>théorie</b> et/ou des <b>données</b>
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+
+<h3> La <b>nature</b>  des modèles </h3>
+
+Que sont les modèles (de simulation) ? 
+<br><br>
+<h3> La <b> fonction</b> des modèles</h3>
+
+A quoi servent les modèles (de simulation) ? 
+
+<img src="img/clueless.jpg", style="float: bottom; width: 60%">
+
+</section>
+
+
+
+<section data-transition="fade-out">
+<h2>Nature(s) des modèles</h2>
+<br><br>
+<ul>
+  <li>Modèles matériels : e.g. maquettes, fougères, levures, drosophiles, piscine à vagues</li>
+  <li><b>Modèles symboliques</b> : grammaires , équations mathématiques, programmes informatiques</li>
+  <li>Modèles mentaux : modèles conceptuels, ontologies, expériences de pensée</li>
+</ul>
+<br>
+<img src="img/varenne.jpg", style="float: right; width: 10%">
+<br><br>
+    <p align="right"><small>Frank Varenne, Théories et modèles en sciences humaines. Le cas de la Géographie. Éditions Matériologiques. 2017</small></p>
+</section>
+
+
+<section data-transition="fade-out">
+
+<h3> Caractérisation du modèle de Marvin Minsky:</h3>
+<br><br>
+<p align="left">
+<font face="georgia">
+<i>
+«Pour un observateur B, un objet A* est un modèle de l'objet A dans la mesure où B peut utiliser A* pour répondre à des <b>questions</b> qui l'<b>intéressent</b> au sujet de A.»
+</i>
+</font>
+</p>
+<br>
+<img src="img/minsky.jpg", style="float: right; width: 12%">
+<br>
+    <p align="right"><small>Marvin Minsky, in Frank Varenne,  Théories et modèles en sciences humaines. Le cas de la Géographie. Éditions Matériologiques. 2017</small></p>
+
+
+
+</section>
+
+
+
+
+
+
+<section data-transition="fade-out">
+
+<h3> La fonction des modèles selon Frank Varenne :  </h3>
+<br>
+<br><br>
+<p align="left">
+<font face="georgia">
+<i>
+«C'est une fonction générale de <b>médiation</b>, plus exactement une fonction  de <b>facilitation</b> d'une médiation dans une <b>enquête</b> de <b>connaissance</b>.»
+</i>
+</font>
+</p>
+<br>
+<img src="img/varenne.jpg", style="float: right; width: 10%">
+<br><br>
+    <p align="right"><small>Frank Varenne, Théories et modèles en sciences humaines. Le cas de la Géographie. Éditions Matériologiques. 2017</small></p>
+</section>
+
+
+
+<section data-transition="fade-out">
+<h3> <b>Les</b> 5 fonctions des modèles selon Frank Varenne :  </h3>
+<ol>
+  <li>Faciliter l'expérience et l'observation contrôlée</li>
+  <li>Faciliter la formulation intelligible <small>(formalisation)</small></li>
+  <li>Faciliter la théorisation <small>(illustration , application)</small></li>
+  <li>Faciliter la co-construction des savoirs <small>(communication)</small></li>
+  <li><b>Faciliter la décision et l'action</b> </li>
+</ol>
+</section>
+
+
+<section data-transition="fade-out">
+
+<h3> Pour nous aujourd'hui : </h3>
+<br>
+Modèle<br>
+=
+<br>
+Système expérimental informatique conçu dans l'objectif de (re)produire des structures ou des phénomènes.
+<br>
+=
+<br>
+«Du code et des équations qui nous facilite la vie pour <b>comprendre</b> un truc»
+</section>
+
+
+<section data-transition="fade-out">
+<h2> <b>LA</b> chose à retenir</h2>
+<br><br>
+  En général, un modèle n'est <b><big> PAS </big></b> prédictif.
+  <br>
+<br>
+un modèle sert à <b>comprendre</b>, à observer, tester des hypothèses (cf. 5 fonctions de Varenne)<br><br>
+Ce n'est pas un oracle ! Même avec des big data !
+
+
+</section>
+
+<section data-transition="fade-out">
+<h2>et pourtant...</h2>
+  
+
+<img src="img/predictivemodel.jpg">
+
+
+</section>
+
+
+
+
+<section data-transition="fade-out">
+
+<h1> La Simulation</h1>
+
+</section>
+
+
+
+<section data-transition="fade-out">
+<h2>Qu'est ce que la simulation ?</h2>
+</section>
+
+<section data-transition="fade-out">
+<h3>Selon google : simulation</h3>
+    <img src="img/simulation1.jpg",  style="float: left; width: 50% ;"> 
+    <img src="img/simulation2.png", style="float: left; width: 50%">
+</section>
+
+<section data-transition="fade-out">
+<h3>Selon google : simulation</h3>
+    <img src="img/simulation3.jpg",  style="float: left; width: 40% ;"> 
+    <img src="img/simulation5.jpg", style="float: left; width: 60%">
+</section>
+
+
+<section data-transition="fade-out">
+<h3>Selon google : simulation +gif</h3>
+    <img src="img/simulation.gif",  style="float: left; width: 50% ;"> 
+    <img src="img/simulation3.gif",  style="float: left; width: 50% ;"> 
+    
+</section>
+
+
+<section data-transition="fade-out">
+<h3>Selon google : simulation</h3>
+    <img src="img/simulation4.jpg",  style="float: center; width: 70% ;"> 
+</section>
+
+
+<section data-transition="fade-out">
+<h3>La simulation n'est pas toujours à visée scientifique ou d'ingénierie:</h3> 
+e.g. : jeux vidéos, cinéma
+<br>
+    <img src="img/simulation2.gif",  style="float: center; width: 50% ;"> 
+<br> <small>Auteur:Clear-Aesthetic <a href="https://wiki24.net/r/ClearAesthetic">https://wiki24.net/r/ClearAesthetic</a> 
+  <br>
+Beaucoup d'autres sur <a href="https://www.reddit.com/r/Simulated/">https://www.reddit.com/r/Simulated/</a></small>
+</section>
+
+
+
+
+
+<section data-transition="fade-out">
+<h2>Éléments de définition (F.Varrenne)</h2>
+<br>
+<p align="left">
+Processus d'utilisation un modèle 
+<br><br>
+Technique d'imitation dynamique du réel
+<br><br>
+Résultat d'un processus de simulation (!)
+<br><br>
+Action  de traitement des symboles qui composent le modèle (!) 
+<br><br>  
+<b>Calcul et observation de la dynamique d'un modèle</b>
+</p>
+</section>
+
+
+
+<section data-transition="fade-out">
+
+<h2>Différents types de simulations:</h2>
+<br>
+
+<ul>
+  <li>Simulation  continue :  Résolution approchée d'équations </li>
+  <li>Simulation  discrète :  Calcul de l'évolution du système (synchrone ou asynchrone)</li>
+  <li> Simulation par Systèmes Multi-  Agents (SMA) : simulation du comportement des entités du systèmes </li>
+</ul>
+</section>
+
+
+
+<section data-transition="fade-out">
+
+<h3>"Modèle de simulation"</h3>
+<br>
+<p align="left">
+
+<u>Ensemble de règles , de mécanismes, écrit en langage informatique, dont l'activation simule un système <i>cible</i></u>
+</p>
+</section>
+
+
+
+
+<section data-transition="fade-out">
+
+<h1> Pause </h1>
+<img src="img/pause.jpg", align="center">
+
+</section>
+
+
+
+<section data-transition="fade-out">
+<h1>Les modèles de simulation spatiale </h1>
+Géographie , Transport, Aménagement
+</section>
+
+
+
+<section data-transition="fade-out">
+<h3>Premiers articles en géographie théorique quantitative</h3>
+</section>
+
+
+
+<section data-transition="fade-out">
+<h3>Les premiers modèles de transport</h3>
+<p align="left">
+Deux études "globales" américaines dirigées par J.D.Carroll : le cas de Détroit , études publiées en 1955 et 1956; puis Chicago  en 1959, 1960 et 1962. <br>
+<br>
+La RATP se dote d’un service d’études générales en 1966 et commence à construire un modèle de prévision dès la fin des années 1960. <br>
+
+
+</p>
+
+
+<img src="img/hadrien.jpg", style="float: right; width: 10%">
+<br>
+    <p align="right"><small>Hadrien Commenges, L'invention de la mobilité quotidienne. Aspects performatifs des instruments de la socio-économie des transports</small></p>
+
+</section>
+
+
+<section data-transition="fade-out">
+<h3><i>Four-step model</i></h3>
+<img src="img/fourstep.png" width="100%">
+<br>
+<ol style="font-size: 80%">
+  <li>Module de <b>génération</b> : quantité de déplacements attirés et émis par zones prédécoupées (caractéristiques de la population et des activités)</li>
+<li> Module de <b>distribution</b> : répartition géographique des flux (modèle gravitaire)</li>
+<li> Module de <b>choix modal</b></li>
+<li> Module d'<b>affectation au réseau</b></li>
+</ol>
+
+<p align="left" style="font-size:80%  ">
+utilisé aux États-Unis depuis le milieu des années 1950 et en France depuis le milieu des années 1960.</p>
+</section>
+
+
+
+
+<section data-transition="fade-out">
+<h4>Module de génération</h4>
+<img src="img/fourstep.png" width="80%">
+<p align="left" style="font-size: 80%">
+
+on cherche à estimer par régression la quantité de déplacement d'une zone (ou d'un ménage) en fonction de variables connues.<br>
+e.g.:
+
+
+<br><br>
+
+\[
+D = \beta_0 + \beta_1 Rev + \beta_2 N_{5+} + \beta_3 N_v +\beta_4 N_p
+\]
+
+<p align="left" style="font-size: 80%">
+avec<br>
+$D$: nombre moyen de déplacement généré par les ménages de la zone<br>
+$Rev$ : niveau de revenu moyen de la zone <br>
+$N_{5+}$ : nombre moyen de personnes de plus de 5 ans<br>
+$N_{v}$ : nombre moyen de véhicule à disposition<br>
+$N_{p}$ : nombre moyen de personnes par ménage <br>
+</p>
+</section>
+
+
+
+<section data-transition="fade-out">
+<h4>Module de distribution</h4>
+<img src="img/fourstep.png" width="80%">
+<p align="left" style="font-size: 80%">
+
+on cherche le flux d'une zone $i$ vers une zone $j$ : modèle gravitaire modifié
+</p>
+$$F_{ij} = \alpha_i \beta_j E_i A_j C_{ij}^{−n}$$ 
+
+<p align="left" style="font-size: 70%">
+
+avec $\alpha_i$ et$\beta_j$ des facteurs d'équilibrage qui assurent la contrainte aux marges,<br>
+$E_i$ et $A_j$ sont les valeurs d’émission et d’attraction de la zone (cf étape de génération)<br>
+$C_{ij}$ est le coût généralisé du trajet de $i$ vers $j$ : temps, prix , inconfort.<br>
+$n$ est l'exposant du coût (frein à la distance en modèle gravitaire classique) , la valeur varie selon les motifs de déplacement. (plus faible vers le travail que vers des motifs "secondaires" (e.g. courses quotidiennes)<br><br>
+
+<b>N.B.</b>: le modèle de distribution doit respecter les émissions et les attractions calculées lors de l’étape de génération. i.e. les marges de la matrice de flux doivent correspondre au total des flux émis et attirés par zones.
+</p>
+</section>
+
+<section data-transition="fade-out">
+<h3>Module de choix modal et affectation au réseau</h3>
+<br>
+<p align="left" style="font-size: 80%">
+<u>Choix modal</u> : grande variété de propositions.<br>
+e.g. :
+<ul style="font-size: 80%">
+<li>modèles d'après enquètes (EMD)</li>
+<li>modèles/régressions logistiques</li>
+<li>optimisation (<i>homo economicus</i>)</li>
+</ul>
+<p align="left" style="font-size: 80%">
+sur une population <b>segmentée</b> (CSP, type de navette ,...)
+ <br><br>
+<u>Affectation au réseau</u> :  généralement rationelle (chemin de moindre coût généralisé) par réseau de modalité.<br>
+
+
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+  <h3>Et la simulation dans tout ça ? </h3>
+  <br>
+<b>Scénarios </b>
+  <ul>
+    <li>Modification des caractéristiques de la population</li>
+    <li>Modification des caractéristiques de la population</li>
+    <li>Modification du réseau de transport</li>
+    <li>Modification de l'affectation </li>
+    <li> Semaine type / Week end </li>
+    <li>Saisonalité, localité</li>
+    <li> ...</li>
+  </ul>
+  <br>
+<p align="left" style="font-size:80%  ">
+  «Modéliser, puis simuler , puis évaluer (comparer), puis décider»
+</p>
+
+</section>
+
+
+
+<section data-transition="fade-out">
+<h3>Double fonction "politique" des modèles en planification des transports</h3>
+
+<p align="left" style="font-size:80%  ">
+Gabriel Dupuy (1975)
+<ol style="font-size:80%  ">
+  <li>la fonction de <b>quantification</b>, dont la forme <i>«garante de
+sa neutralité idéologique et politique »</i>  </li>
+ <li>la <b>légitimation</b> de <i>«l'action planificatrice de l'appareil d'état»</i> </li>
+</ol>
+</p>
+
+<p align="left" style="font-size:80% ">
+Deux acteurs clefs:  l’État et le corps des Ponts. 
+Utilisation de modèle comme  <b>gage de technicité</b> pour se faire une place sur la scène de l’aménagement urbain.
+</p>
+
+<img src="img/hadrien.jpg", style="float: right; width: 10%">
+<br>
+    <p align="right"><small>Hadrien Commenges, L'invention de la mobilité quotidienne. Aspects performatifs des instruments de la socio-économie des transports</small></p>
+
+
+</section>
+
+
+
+
+<section data-transition="fade-out">
+</section>
+
+<section data-transition="fade-out">
+
+<h3> Les grandes questions à discuter</h3>
+
+<ul>
+  <li>A qui sont destinés les modèles ?</li>
+  <li>Peut-on faire un modèle sans données ?</li>
+  <li>La donnée peut-elle  remplacer la théorie? </li>
+  <li>Faut-il expliquer pour prédire ?</li>
+</ul>
+
+<img src="img/charlie.png">
+
+</section>
+
+
+<section data-transition="fade-out">
+</section>
+
+    </div>
+
+      
+      
+    </div>
+    <script src="js/reveal.js/lib/js/head.min.js"></script>
+    <script src="js/reveal.js-min/js/reveal.min.js"></script>
+
+    <script>
+
+
+
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      slideNumber: true,
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        {src: 'js/reveal.js/lib/js/classList.js', condition: function() {
+          return !document.body.classList;
+        }},
+        { src: 'js/reveal.js/plugin/math/math.js', async: true },
+        {src: 'js/reveal.js/plugin/markdown/marked.js', condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }},
+        {src: 'js/reveal.js/plugin/markdown/markdown.js', condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }},
+        {src: 'js/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() {
+          hljs.initHighlightingOnLoad();
+        }},
+        {src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() {
+          return !!document.body.classList;
+        }},
+        {src: 'js/reveal.js/plugin/notes/notes.js', async: true, condition: function() {
+          return !!document.body.classList;
+        }}
+      ]
+    });
+
+
+    </script>
+
+  </body>
+  </html>

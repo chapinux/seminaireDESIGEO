@@ -471,11 +471,27 @@ Ce n'est pas un oracle ! Même avec des big data !
 
 <section data-transition="fade-out">
 
-<h2> Intermède : le jeu de la vie</h2>
+<img src="img/intermission.jpg" width="80%">
+<h2>  le jeu de la vie</h2>
 
 </section>
 
 
+<section data-transition="fade-out">
+
+<h3> À noter</h3>
+
+<p align="left">
+<ul>
+  <li>Automate cellulaire</li>
+  <li>Structures stables</li>
+  <li>Structures mouvantes ("vaisseaux")</li>
+  <li>Structures periodiques</li>
+  <li>"Jardin d'Eden" : aucun prédécesseur</li>
+</ul>
+</p>
+
+</section>
 
 
 
@@ -535,7 +551,7 @@ Beaucoup d'autres sur <a href="https://www.reddit.com/r/Simulated/">https://www.
 
 
 <section data-transition="fade-out">
-<h2>Éléments de définition (F.Varrenne)</h2>
+<h3>Simulation : Éléments de définition (F.Varrenne)</h3>
 <br>
 <p align="left">
 Processus d'utilisation un modèle 
@@ -598,25 +614,36 @@ Action  de traitement des symboles qui composent le modèle (!)
 </section>
 
 <section data-transition="fade-out">
-<p align="left">
 
-Avec une tolérance à 30%, on s'attend à avoir une satisfaction moyenne de 70%.
- <br><br>
-Jouer avec la densité et la tolérance
-Il y a différents "états du monde" . Comment les comparer ?
+À noter
+
+<p align="left">
+<ul>
+<li>Avec une tolérance à 30% tout devrait bien se passer ? </li>
+<li>effet de la densité </li>
+<li> effet de la tolérance </li> 
+</ul>
+<br><br>
+Il y a différents "<i>états du monde</i>"  possibles . Comment les comparer ?
+
 </p>
 
 </section>
 
 
 <section data-transition="fade-out">
-<p align="left">
 
-De nombreux biais : <br><br>
-choix, <br>
-déplacement,<br> 
-espace, <br>
-...
+<h3> Biais ?</h3>
+
+<br><br>
+<p align="left">
+<ul>
+<li>choix</li>
+<li>déplacement</li>
+<li>espace</li>
+<li>temps</li>
+<li>...</li>
+</ul>
 </p>
 
 </section>
@@ -639,9 +666,50 @@ Géographie , Transport, Aménagement
 
 
 <section data-transition="fade-out">
-<h3>Premiers articles en géographie théorique quantitative</h3>
+<h2>Modèles en Géographie</h2>
+<h3>(théorique)(quantitative)</h3>
+<img src="img/vermeer.jpeg" width="45%" align="center">
+<div style="font-size:40% " >Der Geograph, Johannes Vermeer</div>
 </section>
 
+
+<section data-transition="fade-out">
+
+<img src="img/simulationGeographySeb.png" width="70%" >
+<br>
+
+<img src="img/seb.jpg", style="float:right; width: 10%">
+<br>
+    <p align="right"><small> Sébastien Rey-coyrehourcq,Une plateforme intégrée pour la construction et l'évaluation de modèles de simulation en géographie</small></p>
+
+
+</section>
+
+
+
+<section data-transition="fade-out">
+<h2> SimPop : la famille de modèle de systèmes de villes </h2>
+
+
+
+
+</section>
+
+
+
+
+
+<section data-transition="fade-out">
+<img src="img/intermission.jpg" width="80%">
+<h2> le modèle de ruissellement "Grand Canyon" </h2>
+
+</section>
+
+
+
+<section data-transition="fade-out">
+<h2>Modèles en Transports</h2>
+</section>
 
 
 <section data-transition="fade-out">
@@ -801,7 +869,154 @@ Utilisation de modèle comme  <b>gage de technicité</b> pour se faire une place
 
 
 <section data-transition="fade-out">
+
+<img src="img/intermission.jpg" width="80%">
+<h2> le modèle d'attachement préférentiel </h2>
+
 </section>
+
+
+<section data-transition="fade-out">
+
+<h3> Réseau "scale free" </h3>
+
+<br><br>
+<p align="left">
+<ul>
+<li>degré = nombre de liens d'un nœud</li>
+<li><i>scale free networks</i>:   $P(k)\ \sim \ k^{-\gamma }$ </li>
+<li>Propriété de certains réseaux sociaux, biologiques, web</li>
+</ul>
+</p>
+
+<br>
+<p align="left">
+
+L'attachement préférentiel (barabsi Albert 1999) est un modèle génératif. 
+</p>
+
+</section>
+
+
+<section data-transition="fade-out">
+
+<h2><i>Land Use Models</i></h2>
+
+<br>
+Objet du modèle : 
+<br><br>
+
+
+<b>Usage du sol</b> ⇆  <b>Accessibilité</b>
+
+
+
+<p align="left">
+
+
+<br>
+<div style="font-size: 80%">
+Plusieurs "briques" thématiques en sortie e.g.: 
+</div>
+<ul style="font-size: 80%">
+  <li>écologie</li>
+  <li>immobilier</li>
+  <li>aménagement</li>
+  <li>économie </li>
+  </ul>
+<br><br>
+
+<b>LUTI</b> : Land Use Transport Integration
+
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+  <h2>Schéma LUTI</h2>
+  <br>
+<p align="left">
+Principe : <b>Simuler les foyers </b>
+
+<ul style="font-size: 80%">
+  <li>Alimenter l'environnement en données </li>
+  <li> Micro-simulation des comportements des foyers</li>  
+    <ul>
+      <li>Ventilation / génération de population synthétique</li>
+      <li>Modèle de choix discret (MNL) pour les activités du foyer
+      <li>génération d'agendas</li>
+    </ul>
+    <li> Application des choix (e.g. déplacements)</li>
+  </ul>
+</p>  
+</section>
+
+
+
+
+
+
+<section data-transition="fade-out">
+  <h2>Entrées/Sorties d'un modèle LUTI</h2>
+<p align="left">
+
+Entrées : 
+
+<ul style="font-size: 80%">
+  <li>usage du sol (Corine Land Cover)</li>
+  <li>cadastre </li>
+  <li>population (structurée)</li>
+  <li>emplois (structurés) </li>
+  <li>prix du foncier </li>
+  <li>réseaux</li>
+  <li>politiques d'aménagements (projets,</li>
+  <li>zonages (e.g. parc naturel))</li>
+  <li>flux externes</li>
+  <li>démographie</li> 
+  </ul>
+</p>  
+</section>
+
+
+<section data-transition="fade-out">
+  <h2>Entrées/Sorties d'un modèle LUTI</h2>
+<p align="left">
+
+Sorties : 
+
+<ul style="font-size: 80%">
+  <li>usage du sol </li>
+  <li>Spatialisation des domiciles</li>
+  <li>Spatialisation des emplois</li>
+  <li>Charge du réseau</li>
+</ul>
+
+
+<br><br> Et toute l'analyse spatiale et statistique qu'on peu en faire en croisant les dimensions 
+</p> 
+
+
+
+</section>
+
+
+
+
+
+
+
+<section data-transition="fade-out">
+  <h2>UrbanSim</h2>
+</section>
+
+
+<section data-transition="fade-out">
+  <h2>Arcadia</h2>
+
+<iframe src="http://www.casa.ucl.ac.uk/movies-weblog/ArcadiaLUTI.mov"></iframe>
+
+</section>
+
 
 <section data-transition="fade-out">
 

@@ -90,7 +90,7 @@ Simulation : exemples, définition,
 <br><br>
 Modèles de simulation spatiale,
 <br><br>
-Modèles de simulation pour l'aide à la décision
+<small>La simulation pour l'aide à la décision</small>
 <br><br>
 
 
@@ -441,7 +441,7 @@ Système expérimental informatique conçu dans l'objectif de (re)produire des s
 <br>
 =
 <br>
-«Du code et des équations qui nous facilite la vie pour <b>comprendre</b> un truc»
+«Du code et des équations qui nous facilitent la vie pour <b>comprendre</b> un truc»
 </section>
 
 
@@ -709,6 +709,8 @@ Géographie , Transport, Aménagement
 
 <section data-transition="fade-out">
 <h2>Modèles en Transports</h2>
+
+<img src="img/transportChat.jpg" width="80%">
 </section>
 
 
@@ -892,11 +894,17 @@ Utilisation de modèle comme  <b>gage de technicité</b> pour se faire une place
 <br>
 <p align="left">
 
-L'attachement préférentiel (barabsi Albert 1999) est un modèle génératif. 
+L'attachement préférentiel (Barabasi Albert 1999) est un modèle <b>génératif</b>. 
 </p>
 
 </section>
 
+
+
+<section data-transition="fade-out">
+<h2>Modèle en aménagement</h2>
+
+</section>
 
 <section data-transition="fade-out">
 
@@ -953,7 +961,76 @@ Principe : <b>Simuler les foyers </b>
 
 
 
+<section data-transition="fade-out">
+<h3> Modèle de choix discret</h3>  
+<p align="left", style="font-size :  90%">
+  Pour choisir :
+  <ul style="font-size :  90%">
+    <li>lieu de résidence, d'emplois, de consommation</li>
+    <li>mode de transport</li>
+  </ul>
+  <br>
+</p>
+<p align="left", style="font-size :  90%">
+<br>
+Modèle <b>logit</b> multinomial donne <b>la probabilité de choisir une alternative</b> (variable discrète) en fonction de plusieurs variables <b>explicatives</b> (discrète ou continues) 
 
+<br><br>
+Un modèle <b>pour chaque catégorie</b> d'individus et de choix !
+</p>
+
+</section>
+
+
+<section data-transition="fade-out">
+<h3> MNL</h3>  
+<br><br>
+<p align="left">
+Hypothèses (fortes) :
+<br><br>
+<ul style="font-size :  90%">
+  <li>Décision = confrontation des alternatives et de leurs utilités </li>
+<li>Part fixe (<i>systématique</i>) et variable (<i>aléatoire</i>) de l'utilité</li>
+<li>l'alternative de plus haute utilité  est choisie</li>
+<li>Conditions d'indépendance et de distributions de la part aléatoire </li>
+</ul>
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+<p align="left", style="font-size: 80%">
+Utilité d'une alternative $a \in A $ pour un individu de la catégorie $c \in C $: 
+<br><br>
+$$ U_{ac} =  V_{ac} + \epsilon_{ac}$$
+<br>
+Part systématique de $U_{ac}$ : fonction linéaire de caractéristiques <i>propres</i> à l'alternative (paramètres $\beta$), et  de caractéristiques <i>liées</i> à la catégorie du décideur (paramètre $\gamma$)
+<br><br>
+$$V_{ac} = \beta_1 X_{a1} + \beta_2 X_{a2}   + \dots +  \gamma_{ac1}X_{ac1} + \gamma_{ac2} X_{ac2} +  \dots $$
+<br>
+Probabilité pour un individu de la catégorie $c$, de choisir l'alternative $a$  (=<b>MNL</b>)  : 
+$$P_c(a)=\frac{exp(V_{ac})}{\sum_{b \in A } exp(V_{bc})}$$ 
+
+
+</p>
+</section>
+
+<section data-transition="fade-out">
+<h3>MNL: suites et limites </h3>
+<br><br>
+<p align="left", style="font-size: 80%">
+Facilité d'implémentation $\forall a $ ,$\forall c$ : <br>  
+ Pour un individu,  on tire un nombre aléatoire, on compare à la (distribution de) probabilité cumulée des alternatives de sa catégorie: on obtient sa décision<br> $\Rightarrow$Les coefficients du modèle linéaire "font" la spécificité du couple $(a,c)$ (<b>discutable ! </b>). 
+<br>
+<br>
+Outre les hypothèses, déjà fortes : <br>
+Estimation des coefficients sur les données (= on récupère tous leurs biais)
+<br>
+Certains choix sont <b>conjoints</b> ou <b>conditionnés</b> (cf. nested logit models), <br>
+
+
+
+</section>
 
 
 <section data-transition="fade-out">
@@ -969,11 +1046,14 @@ Entrées :
   <li>emplois (structurés) </li>
   <li>prix du foncier </li>
   <li>réseaux</li>
-  <li>politiques d'aménagements (projets,</li>
-  <li>zonages (e.g. parc naturel))</li>
+  <li>politiques d'aménagements (projets industriels, ZAC, lotissements,...) </li>
+  <li>zonages (e.g. parc naturel)</li>
   <li>flux externes</li>
   <li>démographie</li> 
   </ul>
+
+
+Problèmes inévitables : consistance/hétérogénéité,échelle, géocodage,
 </p>  
 </section>
 
@@ -992,7 +1072,7 @@ Sorties :
 </ul>
 
 
-<br><br> Et toute l'analyse spatiale et statistique qu'on peu en faire en croisant les dimensions 
+<br><br> Et toute l'<b>analyse spatiale et statistique</b> qu'on peu en faire en croisant les dimensions 
 </p> 
 
 
@@ -1007,15 +1087,125 @@ Sorties :
 
 <section data-transition="fade-out">
   <h2>UrbanSim</h2>
+
+
+<br>
+<p align="left" >
+<ul style="font-size: 80%">
+  <li> UrbanSim  is  a  model  system  to  support  land  use,  transportation  and  environmental  planning</li>
+  <li>Licensed  as  an  Open  Source  software  system,  and  is  freely  downloadable from <a href="www.urbansim.com">www.urbansim.com</a></li>
+  <li> Designed  by  Dr.  Paul  Waddell,  University  of  California  Berkeley</li>  
+  <li>It  is  a  full  microsimulation  model  system:  simulates  choices  of  millions  of  agents:  households,  businesses,  developers  </li>
+  <li>Recent  surveys  show  that  UrbanSim  has  become  the  most  widely  used  land use  model  system  by  planning  agencies  in  US</li>
+</ul> 
+
+
+<img src="img/waddell.jpg", style="float: right; width: 12%">
+<br><br><br>
+    <p align="right"><small>Paul Waddell</small></p>
+
+
 </section>
+
 
 
 <section data-transition="fade-out">
   <h2>Arcadia</h2>
+<br>
+CASA , UCL <br>
 
-<iframe src="http://www.casa.ucl.ac.uk/movies-weblog/ArcadiaLUTI.mov"></iframe>
+<a href="http://www.casa.ucl.ac.uk/movies-weblog/ArcadiaLUTI.mov">Demo Arcadia</a>
+<br><br>
+<p align="left"><small>
+Plus de détails sur<br> <a href="https://www.ucl.ac.uk/bartlett/casa/research/arcadia-adaptation-and-resilience-cities"> https://www.ucl.ac.uk/bartlett/casa/research/arcadia-adaptation-and-resilience-cities</a>
+</small></p>
 
 </section>
+
+
+  
+
+<section data-transition="fade-out"  >
+<h3>SimPLU3D</h3>
+<p align="left", style="font-size: 80%">
+Bilbliothèque simulant la <b>construction de bâtiments</b> en fonction de <b>règles d'urbanisme</b> (PLU)
+<br>
+Repose sur <b>Geoxygene3D</b> , framework SIG 3D développé à l'IGN
+</p>
+<img src="img/simplu_IO.png" width="60%"><br>
+
+<img src="img/mickaelb.jpeg", style="float: right; width: 10%">
+<br>
+    <p align="right"><small>Mickaël Brasebin, Les données géographiques 3D pour simuler l'impact de la réglementation urbaine sur la morphologie du bâti. 2013</small></p>
+
+
+
+</section>  
+
+
+<section data-transition="fade-out">
+    <iframe width= "100%" height= "500" src= "http://www.youtube.com/embed/dH9woKexsVw?fs=1&autoplay=1&loop=1" frameborder= "0" allowFullScreen="" ></iframe>
+</p>
+</section>
+
+
+<section data-transition="fade-out">
+
+
+        <a href="simplu.openmole.org">simplu.openmole.org</a>
+</section>
+
+
+
+
+
+<section data-transition="fade-out">
+
+<img src="img/intermission.jpg" width="80%">
+<h2>  les boids </h2>
+
+</section>
+
+
+
+<section data-transition="fade-out">
+
+<h2>  les boids </h2>
+
+Analogie avec un fluide ? 
+
+</section>
+
+
+
+<section data-transition="fade-out">
+    <iframe width= "100%" height= "500" src= "https://www.youtube.com/watch?v=WAA6sdWrV20" frameborder= "0" allowFullScreen="" ></iframe>
+</p>
+</section>
+
+
+
+
+<section data-transition="fade-out">
+  <h2>Simulation pour l'aide à la décision</h2>
+</section>
+
+
+<section data-transition="fade-out">
+  <img src="img/aidedecision.svg" width="75%">
+</section>
+
+
+<section data-transition="fade-out">
+  <h3>Simulation pour l'aide à la décision</h3>
+
+<br><br>
+  Décider/Planifier pourrait être : «utiliser les connaissances acquises grâce au <b>modèle</b> pour agir sur le <b>terrain</b>»
+<br><br>
+
+Et concrètement ?
+</section>
+
 
 
 <section data-transition="fade-out">
@@ -1027,9 +1217,28 @@ Sorties :
   <li>Peut-on faire un modèle sans données ?</li>
   <li>La donnée peut-elle  remplacer la théorie? </li>
   <li>Faut-il expliquer pour prédire ?</li>
+  <li> Dans quels cas ne pas simuler un système ?</li>
 </ul>
 
 <img src="img/charlie.png">
+
+</section>
+
+
+<section data-transition="fade-out">
+  <img src="img/mordor.jpg">
+</section>
+
+
+<section data-transition="fade-out">
+<h2> <b>LA</b> chose à retenir</h2>
+<br><br>
+  En général, un modèle n'est <b><big> PAS </big></b> prédictif.
+  <br>
+<br>
+un modèle sert à <b>comprendre</b>, à observer, tester des hypothèses (cf. 5 fonctions de Varenne)<br><br>
+Ce n'est pas un oracle ! Même avec des big data !
+
 
 </section>
 
